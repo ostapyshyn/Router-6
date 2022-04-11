@@ -4,20 +4,21 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Posts } from './pages/Posts';
 import { Notfound } from './pages/Notfound';
+import { Singlepage } from './pages/Singlepage';
+
+import { Layout } from './components/Layout';
 
 function App() {
   return (
     <>
-      <header>
-        <Link to='/'>Home</Link>
-        <Link to='/posts'>Blog</Link>
-        <Link to='/about'>About</Link>
-      </header>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/posts' element={<Posts />} />
-        <Route path='*' element={<Notfound />} />
+        <Route path='/' element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path='about' element={<About />} />
+          <Route path='posts' element={<Posts />} />
+          <Route path='posts/:id' element={<Singlepage />} />
+          <Route path='*' element={<Notfound />} />
+        </Route>
       </Routes>
     </>
   );
