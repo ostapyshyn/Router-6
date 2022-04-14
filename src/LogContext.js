@@ -1,8 +1,12 @@
-import React from 'react';
+import { useState, createContext, useMemo } from 'react';
 
-const LogContext = React.createContext({
-  isLogged: null,
-  setIsLogged: () => {},
-});
+const LogContext = createContext();
 
-export default LogContext;
+const LogProvider = (props) => {
+  const [isLogged, setIsLogged] = useState(false);
+
+  const value = useMemo(() => ({ isLogged, setIsLogged }), [isLogged]);
+
+  return <LogContext.Provider value={value}>{props.children}</LogContext.Provider>;
+};
+export { LogContext, LogProvider };

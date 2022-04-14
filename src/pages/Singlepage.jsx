@@ -16,7 +16,9 @@ const Singlepage = () => {
 
   return (
     <div>
-      <button onClick={goBack}>Go Back</button>
+      <button className='button' onClick={goBack}>
+        Go Back
+      </button>
       {post && (
         <>
           <h1>{post.title}</h1>

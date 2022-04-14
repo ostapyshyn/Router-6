@@ -1,6 +1,10 @@
+import { useContext } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
-function PrivateRoute({ isLogged }) {
+import { LogContext } from '../LogContext';
+
+function PrivateRoute() {
+  const { isLogged } = useContext(LogContext);
   return isLogged ? <Outlet /> : <Navigate to='/' />;
 }
 

@@ -13,7 +13,7 @@ const Layout = () => {
         <Outlet />
       </main>
 
-      <footer className='container'>2022</footer>
+      <footer>2022</footer>
     </>
   );
 };

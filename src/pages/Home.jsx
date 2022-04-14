@@ -1,18 +1,22 @@
 import React, { useContext } from 'react';
-
-import LogContext from '../LogContext';
+import { LogContext } from '../LogContext';
+// import '../index.css';
 
 const Home = () => {
-  const data = useContext(LogContext);
-  console.log('home', data);
-
-  
+  const { setIsLogged } = useContext(LogContext);
 
   return (
-    <div>
+    <>
       <h1>Home page</h1>
-      
-    </div>
+      <div className='center'>
+        <button className='button' onClick={() => setIsLogged(true)}>
+          LogIn
+        </button>
+        <button className='button' onClick={() => setIsLogged(false)}>
+          LogOut
+        </button>
+      </div>
+    </>
   );
 };
 
