@@ -41,7 +41,7 @@ h1 {
 }
 
 main {
-  min-height: calc(100vh - 85px - 22px);
+  min-height: calc(100vh - 200px);
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -61,11 +61,21 @@ main a:hover {
 }
 
 .center,
+h2,
 footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 100px;
+}
+
+.home {
+  color: salmon;
+  text-decoration: underline;
+}
+
+h2 {
+  color: salmon;
 }
 
 .button {
